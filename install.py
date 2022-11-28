@@ -106,9 +106,9 @@ else:
     for line in settings_json:
         output.append(line + '\n')
 
-print(f'Copying VS Code confgiguration to {CODE_CONFIG}.')
-print(f'In VS Code, the menu bar will be hidden until you press alt.')
-print(f"If you want to change this behavior, edit the 'settings.json' file.")
+print(f'Writing VS Code confgiguration to {CODE_CONFIG}.')
+print(f"In VS Code, the menu bar will be hidden until you press 'alt'.")
+print(f"If you want to change this behavior, or any other settings, edit the 'settings.json' file.")
 f = open(CODE_CONFIG, "w+")
 f.writelines(output)
 f.close()
