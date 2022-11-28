@@ -67,7 +67,7 @@ MAP = {
         'constant.language',  # true, false
 
         # Character (in e.g. Rust). Note: there should probably be a separate def:character rule,
-        # but the Adwaita scheme doesn't include it and gtksv falls back to def:constant.
+        # but the qualia scheme doesn't include it and gtksv falls back to def:constant.
         'string.quoted.single.char',
 
         'support.type.property-name',  # { →"key"←: ... } (in e.g. JSON)
@@ -109,12 +109,12 @@ MAP = {
         'storage.type.function',  # →function← meow()
 
         # YAML key names are considered tag names. Tag names and strings are of a very similar color
-        # (https://github.com/piousdeer/vscode-adwaita/issues/4), so we treat them as keywords like
+        # (https://github.com/piousdeer/vscode-qualia/issues/4), so we treat them as keywords like
         # gtksv does.
         'entity.name.tag.yaml',
 
         # Workarounds for extensions that incorrectly mark keywords with `storage.type`
-        # (https://github.com/piousdeer/vscode-adwaita/issues/5)
+        # (https://github.com/piousdeer/vscode-qualia/issues/5)
         'source.js storage.type',
         'source.ts storage.type',
         'source.tsx storage.type',
@@ -329,11 +329,11 @@ def gsv_to_textmate(scheme: ElementTree):
     return rules
 
 
-def get_adwaita_colors(theme_type):
+def get_qualia_colors(theme_type):
     if theme_type == 'dark':
-        file = 'gtksourceview_xml/Adwaita-dark.xml'
+        file = 'gtksourceview_xml/dark.xml'
     else:
-        file = 'gtksourceview_xml/Adwaita.xml'
+        file = 'gtksourceview_xml/default.xml'
     scheme = parse_xml(file)
     named_colors = gsv_get_named_colors(scheme)
     syntax_colors = gsv_to_textmate(scheme)

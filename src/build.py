@@ -2,9 +2,31 @@
 import json
 import re
 import itertools
-from adwaita_colors import get_adwaita_colors
-from adwaita_ui_colors import get_adwaita_ui_colors
+import subprocess
+from os import remove, path, chdir
 
+from qualia_colors import get_qualia_colors
+from qualia_ui_colors import get_qualia_ui_colors
+
+SRC_DIR = path.dirname(path.realpath(__file__))
+MAIN_SASS = 'qualia.scss'
+
+chdir(SRC_DIR)
+
+ACCENTS = {
+    'orange': '#ed5b28',
+    'bark': '#8d6b4c',
+    'sage': '#737d5a',
+    'olive': '#518e3c',
+    'viridian': '#1fa36a',
+    'prussiangreen': '#27b397',
+    'lightblue': '#5298ce',
+    'blue': '#465acb',
+    'purple': '#9851c4',
+    'magenta': '#c752c7',
+    'pink': '#e86ba9',
+    'red': '#df4242'
+}
 
 def load_jsonc(path):
     '''Read JSON with comments.'''
@@ -41,24 +63,24 @@ package_json_entry = {
 for (
     theme_type,
     syntax_colors_type,
-    colorful_status_bar
+    accent
 ) in itertools.product(
     ('dark', 'light'),
-    ('adwaita', 'default'),
-    (False, True)
+    ('qualia', 'default'),
+    list(ACCENTS.keys())
 ):
-    name = f'Adwaita {theme_type.capitalize()}'
-    ui_colors = get_adwaita_ui_colors(theme_type, colorful_status_bar)
+    accent_name = ' ' + accent if accent != 'orange' else ''
 
-    if syntax_colors_type == 'adwaita':
-        _named_colors, syntax_colors = get_adwaita_colors(theme_type)
+    name = f'qualia{accent_name} {theme_type}'
+
+    ui_colors = get_qualia_ui_colors(theme_type, ACCENTS[accent])
+
+    if syntax_colors_type == 'qualia':
+        _named_colors, syntax_colors = get_qualia_colors(theme_type)
         syntax_colors += extra_syntax_colors
     else:
         syntax_colors = get_default_syntax_colors(theme_type)
         name += ' & default syntax highlighting'
-
-    if colorful_status_bar:
-        name += ' & colorful status bar'
 
     theme = {
         '$schema': 'vscode://schemas/color-theme',

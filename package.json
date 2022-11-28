@@ -1,10 +1,10 @@
 {
-  "name": "adwaita-theme",
+  "name": "qualia-theme",
   "icon": "assets/icon.png",
-  "displayName": "Adwaita",
-  "description": "Theme for the GNOME desktop",
+  "displayName": "qualia",
+  "description": "qualia theme",
   "version": "1.0.8",
-  "publisher": "piousdeer",
+  "publisher": "dgsasha",
   "license": "GPL-3.0-only",
   "engines": {
     "vscode": "^1.65.0"
@@ -18,65 +18,499 @@
     "gtk",
     "gtk4"
   ],
-  "homepage": "https://github.com/piousdeer/vscode-adwaita",
+  "homepage": "https://github.com/dgsasha/dg-vscode-adwaita",
   "bugs": {
-    "url": "https://github.com/piousdeer/vscode-adwaita/issues"
+    "url": "https://github.com/dgsasha/qualia-gtk-theme/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/piousdeer/vscode-adwaita.git"
+    "url": "https://github.com/dgsasha/dg-vscode-adwaita.git"
   },
   "contributes": {
     "themes": [
       {
-        "label": "Adwaita Dark",
+        "label": "qualia dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/adwaita-dark.json"
+        "path": "./themes/qualia-dark.json"
       },
       {
-        "label": "Adwaita Dark & colorful status bar",
+        "label": "qualia dark & colorful status bar",
         "uiTheme": "vs-dark",
-        "path": "./themes/adwaita-dark-colorful-status-bar.json"
+        "path": "./themes/qualia-dark-colorful-status-bar.json"
       },
       {
-        "label": "Adwaita Dark & default syntax highlighting",
+        "label": "qualia bark dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/adwaita-dark-default-syntax-highlighting.json"
+        "path": "./themes/qualia-bark-dark.json"
       },
       {
-        "label": "Adwaita Dark & default syntax highlighting & colorful status bar",
+        "label": "qualia bark dark & colorful status bar",
         "uiTheme": "vs-dark",
-        "path": "./themes/adwaita-dark-default-syntax-highlighting-colorful-status-bar.json"
+        "path": "./themes/qualia-bark-dark-colorful-status-bar.json"
       },
       {
-        "label": "Adwaita Light",
-        "uiTheme": "vs",
-        "path": "./themes/adwaita-light.json"
+        "label": "qualia sage dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-sage-dark.json"
       },
       {
-        "label": "Adwaita Light & colorful status bar",
-        "uiTheme": "vs",
-        "path": "./themes/adwaita-light-colorful-status-bar.json"
+        "label": "qualia sage dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-sage-dark-colorful-status-bar.json"
       },
       {
-        "label": "Adwaita Light & default syntax highlighting",
-        "uiTheme": "vs",
-        "path": "./themes/adwaita-light-default-syntax-highlighting.json"
+        "label": "qualia olive dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-olive-dark.json"
       },
       {
-        "label": "Adwaita Light & default syntax highlighting & colorful status bar",
+        "label": "qualia olive dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-olive-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia viridian dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-viridian-dark.json"
+      },
+      {
+        "label": "qualia viridian dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-viridian-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia prussiangreen dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-prussiangreen-dark.json"
+      },
+      {
+        "label": "qualia prussiangreen dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-prussiangreen-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia lightblue dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-lightblue-dark.json"
+      },
+      {
+        "label": "qualia lightblue dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-lightblue-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia blue dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-blue-dark.json"
+      },
+      {
+        "label": "qualia blue dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-blue-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia purple dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-purple-dark.json"
+      },
+      {
+        "label": "qualia purple dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-purple-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia magenta dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-magenta-dark.json"
+      },
+      {
+        "label": "qualia magenta dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-magenta-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia pink dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-pink-dark.json"
+      },
+      {
+        "label": "qualia pink dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-pink-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia red dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-red-dark.json"
+      },
+      {
+        "label": "qualia red dark & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-red-dark-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia bark dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-bark-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia bark dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-bark-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia sage dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-sage-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia sage dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-sage-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia olive dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-olive-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia olive dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-olive-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia viridian dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-viridian-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia viridian dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-viridian-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia prussiangreen dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-prussiangreen-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia prussiangreen dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-prussiangreen-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia lightblue dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-lightblue-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia lightblue dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-lightblue-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia blue dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-blue-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia blue dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-blue-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia purple dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-purple-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia purple dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-purple-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia magenta dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-magenta-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia magenta dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-magenta-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia pink dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-pink-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia pink dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-pink-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia red dark & default syntax highlighting",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-red-dark-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia red dark & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qualia-red-dark-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia light",
         "uiTheme": "vs",
-        "path": "./themes/adwaita-light-default-syntax-highlighting-colorful-status-bar.json"
+        "path": "./themes/qualia-light.json"
+      },
+      {
+        "label": "qualia light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia bark light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-bark-light.json"
+      },
+      {
+        "label": "qualia bark light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-bark-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia sage light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-sage-light.json"
+      },
+      {
+        "label": "qualia sage light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-sage-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia olive light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-olive-light.json"
+      },
+      {
+        "label": "qualia olive light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-olive-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia viridian light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-viridian-light.json"
+      },
+      {
+        "label": "qualia viridian light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-viridian-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia prussiangreen light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-prussiangreen-light.json"
+      },
+      {
+        "label": "qualia prussiangreen light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-prussiangreen-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia lightblue light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-lightblue-light.json"
+      },
+      {
+        "label": "qualia lightblue light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-lightblue-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia blue light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-blue-light.json"
+      },
+      {
+        "label": "qualia blue light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-blue-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia purple light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-purple-light.json"
+      },
+      {
+        "label": "qualia purple light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-purple-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia magenta light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-magenta-light.json"
+      },
+      {
+        "label": "qualia magenta light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-magenta-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia pink light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-pink-light.json"
+      },
+      {
+        "label": "qualia pink light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-pink-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia red light",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-red-light.json"
+      },
+      {
+        "label": "qualia red light & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-red-light-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia bark light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-bark-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia bark light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-bark-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia sage light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-sage-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia sage light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-sage-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia olive light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-olive-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia olive light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-olive-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia viridian light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-viridian-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia viridian light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-viridian-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia prussiangreen light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-prussiangreen-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia prussiangreen light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-prussiangreen-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia lightblue light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-lightblue-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia lightblue light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-lightblue-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia blue light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-blue-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia blue light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-blue-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia purple light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-purple-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia purple light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-purple-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia magenta light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-magenta-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia magenta light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-magenta-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia pink light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-pink-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia pink light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-pink-light-default-syntax-highlighting-colorful-status-bar.json"
+      },
+      {
+        "label": "qualia red light & default syntax highlighting",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-red-light-default-syntax-highlighting.json"
+      },
+      {
+        "label": "qualia red light & default syntax highlighting & colorful status bar",
+        "uiTheme": "vs",
+        "path": "./themes/qualia-red-light-default-syntax-highlighting-colorful-status-bar.json"
       }
     ]
   },
   "scripts": {
     "build": "cd src && python3 build.py"
-  },
-  "__metadata": {
-    "id": "93fbc635-4a9a-4ff1-88ba-bf017484c602",
-    "publisherDisplayName": null,
-    "publisherId": "93befe42-7314-4d14-8724-19419a27ed64",
-    "isPreReleaseVersion": false
   }
 }
