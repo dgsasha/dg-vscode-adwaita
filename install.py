@@ -62,12 +62,13 @@ accent = args.c
 theme = args.t
 accent_name = ' ' + accent if accent != 'orange' else ''
 default_syntax = ' & default syntax highlighting' if args.d else ''
-theme_name = 'qualia' + accent_name + ' ' + theme + default_syntax
 
 css_file = f'file:///{EXTENSION_DIR}/css/qualia-{accent}-{theme}.css'
 settings_json = [
     '{',
-    f'    "workbench.colorTheme": "{theme_name}",',
+    f'    "workbench.preferredDarkColorTheme": "qualia{accent_name} dark{default_syntax}",',
+    f'    "workbench.preferredLightColorTheme": "qualia{accent_name} light{default_syntax}",',
+    f'    "workbench.colorTheme": "qualia{accent_name} {theme}{default_syntax}",',
     '    "window.titleBarStyle": "native",',
     '    "window.menuBarVisibility": "toggle", // Menu bar will be hidden until you press Alt',
     '    "window.autoDetectColorScheme": true,',
@@ -93,6 +94,8 @@ if Path(CODE_CONFIG).is_file():
         r = open(CODE_CONFIG, "r")
         for l in r:
             if not l.strip().startswith('"workbench.colorTheme') \
+            and not l.strip().startswith('"workbench.preferredLightColorTheme') \
+            and not l.strip().startswith('"workbench.preferredDarkColorTheme') \
             and l.strip().startswith(line.strip().split(':')[0]):
                 output.append(l)
                 dont_write = True
