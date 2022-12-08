@@ -71,7 +71,7 @@ def get_qualia_ui_colors(theme_type, accent):
         'button.border':                        '#ffffff0d',
         'button.foreground':                    '#ffffff' if dark else '#000000',
         'list.activeSelectionBackground':       accent,
-        'list.highlightForeground':             '#ffffff',
+        'list.highlightForeground':             '#ffffff' if dark else '#323232',
         'list.activeSelectionForeground':       '#ffffff',
         'list.activeSelectionIconForeground':   '#ffffff',
         'list.focusHighlightForeground':        '#ffffff',
@@ -108,7 +108,9 @@ def get_qualia_ui_colors(theme_type, accent):
         'activityBar.foreground':               '#ffffff' if dark else '#323232',
         'editor.background':                    '#292929' if dark else '#fcfcfc',
         'editorLineNumber.foreground':          '#666666' if dark else '#32323280',
+    	'editorActiveLineNumber.foreground':    '#ffffff' if dark else '#323232',
         'widget.shadow':                        '#00000033' if dark else '#00000022',
+        'editor.foreground':                    '#ffffff' if dark else '#323232',
     }
 
     return ui_colors

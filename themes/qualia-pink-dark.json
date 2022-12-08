@@ -90,7 +90,9 @@
     "activityBar.foreground": "#ffffff",
     "editor.background": "#292929",
     "editorLineNumber.foreground": "#666666",
-    "widget.shadow": "#00000033"
+    "editorActiveLineNumber.foreground": "#ffffff",
+    "widget.shadow": "#00000033",
+    "editor.foreground": "#ffffff"
   },
   "tokenColors": [
     {

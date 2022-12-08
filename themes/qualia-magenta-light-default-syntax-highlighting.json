@@ -57,7 +57,7 @@
     "button.border": "#ffffff0d",
     "button.foreground": "#000000",
     "list.activeSelectionBackground": "#c752c7",
-    "list.highlightForeground": "#ffffff",
+    "list.highlightForeground": "#323232",
     "list.activeSelectionForeground": "#ffffff",
     "list.activeSelectionIconForeground": "#ffffff",
     "list.focusHighlightForeground": "#ffffff",
@@ -90,7 +90,9 @@
     "activityBar.foreground": "#323232",
     "editor.background": "#fcfcfc",
     "editorLineNumber.foreground": "#32323280",
-    "widget.shadow": "#00000022"
+    "editorActiveLineNumber.foreground": "#323232",
+    "widget.shadow": "#00000022",
+    "editor.foreground": "#323232"
   },
   "tokenColors": [
     {
