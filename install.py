@@ -94,7 +94,7 @@ for user_config_dir, extensions_dir in zip(USER_CONFIG_DIRS, EXTENSIONS_DIRS):
         '}'
     ]
 
-    print(f'{BGREEN}Installing{NC} the{BOLD} qualia VS Code theme {NC} in {BOLD}{extension_dir}{NC}')
+    print(f'{BGREEN}Installing{NC} the{BOLD} qualia VS Code theme {NC}in {BOLD}{extension_dir}{NC}')
     copytree(REPO_DIR, extension_dir, ignore=ignore_patterns('.*'), dirs_exist_ok=True)
 
     output = []
