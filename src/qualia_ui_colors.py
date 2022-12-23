@@ -70,6 +70,7 @@ def get_qualia_ui_colors(theme_type, accent):
         'button.secondaryHoverBackground':      '#ffffff26' if dark else '#0000001f',
         'button.border':                        '#ffffff0d',
         'button.foreground':                    '#ffffff' if dark else '#000000',
+        'button.secondaryForeground':                    '#ffffff' if dark else '#000000',
         'list.activeSelectionBackground':       accent,
         'list.highlightForeground':             '#ffffff' if dark else '#323232',
         'list.activeSelectionForeground':       '#ffffff',

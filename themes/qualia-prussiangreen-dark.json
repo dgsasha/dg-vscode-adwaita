@@ -56,6 +56,7 @@
     "button.secondaryHoverBackground": "#ffffff26",
     "button.border": "#ffffff0d",
     "button.foreground": "#ffffff",
+    "button.secondaryForeground": "#ffffff",
     "list.activeSelectionBackground": "#27b397",
     "list.highlightForeground": "#ffffff",
     "list.activeSelectionForeground": "#ffffff",
