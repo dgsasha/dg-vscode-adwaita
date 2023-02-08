@@ -4,6 +4,7 @@ from os import path, environ, makedirs
 from shutil import copytree, ignore_patterns, copyfile
 from pathlib import Path
 import argparse
+import json5 as json
 
 NC = '\033[0m'
 BOLD = '\033[1m'
@@ -77,53 +78,44 @@ for user_config_dir, extensions_dir in zip(USER_CONFIG_DIRS, EXTENSIONS_DIRS):
 
     makedirs(extension_dir, exist_ok=True)
 
-    css_file = f'file:///{extension_dir}/css/qualia-{accent}-{theme}.css'
-    settings_json = [
-        '{',
-        f'    "workbench.preferredDarkColorTheme": "qualia{accent_name} dark{default_syntax}",',
-        f'    "workbench.preferredLightColorTheme": "qualia{accent_name} light{default_syntax}",',
-        f'    "workbench.colorTheme": "qualia{accent_name} {theme}{default_syntax}",',
-        '    "window.titleBarStyle": "native",',
-        '    "window.menuBarVisibility": "toggle", // Menu bar will be hidden until you press Alt',
-        '    "window.autoDetectColorScheme": true,',
-        '    "window.title": "${rootPath}${separator}Code",',
-        '    "breadcrumbs.enabled": false,',
-        '    "editor.renderLineHighlight": "none",',
-        '    "workbench.iconTheme": null,',
-        '    "workbench.tree.indent": 12,',
-        '}'
-    ]
+    override = {
+        "workbench.preferredDarkColorTheme": f"qualia{accent_name} dark{default_syntax}",
+        "workbench.preferredLightColorTheme": f"qualia{accent_name} light{default_syntax}",
+        "workbench.colorTheme": f"qualia{accent_name} {theme}{default_syntax}"
+    }
+    optional = {
+        "window.titleBarStyle": "native",
+        "window.menuBarVisibility": "toggle",
+        "window.autoDetectColorScheme": True,
+        "window.title": "${rootPath}${separator}Code",
+        "breadcrumbs.enabled": False,
+        "editor.renderLineHighlight": "none",
+        "workbench.iconTheme": None,
+        "workbench.tree.indent": 12
+    }
 
+    full = {**override, **optional}
     print(f'{BGREEN}Installing{NC} the{BOLD} qualia VS Code theme {NC}in {BOLD}{extension_dir}{NC}')
     copytree(REPO_DIR, extension_dir, ignore=ignore_patterns('.*'), dirs_exist_ok=True)
-
-    output = []
 
     if not Path(backup_config).is_file() and Path(code_config).is_file():
         copyfile(code_config, backup_config)
 
-    if Path(code_config).is_file():
-        for line in settings_json:
-            dont_write = False
-            r = open(code_config, "r", encoding='UTF-8')
-            for l in r:
-                if not l.strip().startswith('"workbench.colorTheme') \
-                and not l.strip().startswith('"workbench.preferredLightColorTheme') \
-                and not l.strip().startswith('"workbench.preferredDarkColorTheme') \
-                and l.strip().startswith(line.strip().split(':')[0]):
-                    output.append(l)
-                    dont_write = True
-            if not dont_write:
-                output.append(line + '\n')
-            r.close()
-    else:
-        for line in settings_json:
-            output.append(line + '\n')
-
     print(f'Writing VS Code configuration to {code_config}.')
-    f = open(code_config, "w+", encoding='UTF-8')
-    f.writelines(output)
-    f.close()
+
+    try:
+        with open(code_config, 'r') as file:
+            data = json.load(file)
+        for key, value in optional.items():
+            if key not in data.keys():
+                data[key] = value
+        for key, value in override.items():
+            data[key] = value
+        with open(code_config, 'w') as file:
+            json.dump(data, file, indent=2)
+    except:
+        with open(code_config, 'w') as file:
+            json.dump(full, file, indent=2)
 
 print("In VS Code, the menu bar will be hidden until you press 'alt'.")
 print("If you want to change this behavior, or any other settings, edit the 'settings.json' file.")
