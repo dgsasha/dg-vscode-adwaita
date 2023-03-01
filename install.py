@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
+import subprocess
 from os import path, environ, makedirs
-from shutil import copytree, ignore_patterns, copyfile
+from shutil import ignore_patterns, copyfile, which
 from pathlib import Path
 import argparse
 import json5 as json
@@ -14,14 +15,11 @@ USER = environ.get('USER')
 HOME = path.expanduser(f'~{USER}')
 REPO_DIR = path.dirname(path.realpath(__file__))
 
+VSIX = f'{REPO_DIR}/qualia-theme-1.0.8.vsix'
+
 USER_CONFIG_DIRS = [
     f'{HOME}/.config/Code/User',
     f'{HOME}/.var/app/com.visualstudio.code/config/Code/User'
-]
-
-EXTENSIONS_DIRS = [
-    f'{HOME}/.vscode/extensions',
-    f'{HOME}/.var/app/com.visualstudio.code/data/vscode/extensions'
 ]
 
 ACCENTS = (
@@ -67,16 +65,21 @@ theme = args.t
 accent_name = ' ' + accent if accent != 'orange' else ''
 default_syntax = ' & default syntax highlighting' if args.d else ''
 
-for user_config_dir, extensions_dir in zip(USER_CONFIG_DIRS, EXTENSIONS_DIRS):
-    if not (path.isdir(user_config_dir) and path.isdir(extensions_dir)):
+if which('code'):
+    print(f'{BGREEN}Installing{NC} the{BOLD} qualia VS Code theme{NC}')
+    subprocess.run(['code', '--install-extension', VSIX], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+if which('flatpak'):
+    returncode = subprocess.run(['flatpak', 'info', 'com.visualstudio.code'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT).returncode
+    if returncode == 0:
+        print(f'{BGREEN}Installing{NC} the{BOLD} flatpak qualia VS Code theme{NC}')
+        subprocess.run(['flatpak', 'run', 'com.visualstudio.code', '--install-extension', VSIX], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+for user_config_dir in USER_CONFIG_DIRS:
+    if not (path.isdir(user_config_dir)):
         continue
 
     code_config = f'{user_config_dir}/settings.json'
     backup_config = f'{user_config_dir}/settings.json.bak'
-
-    extension_dir = f'{extensions_dir}/qualia'
-
-    makedirs(extension_dir, exist_ok=True)
 
     override = {
         "workbench.preferredDarkColorTheme": f"qualia{accent_name} dark{default_syntax}",
@@ -95,15 +98,13 @@ for user_config_dir, extensions_dir in zip(USER_CONFIG_DIRS, EXTENSIONS_DIRS):
     }
 
     full = {**override, **optional}
-    print(f'{BGREEN}Installing{NC} the{BOLD} qualia VS Code theme {NC}in {BOLD}{extension_dir}{NC}')
-    copytree(REPO_DIR, extension_dir, ignore=ignore_patterns('.*'), dirs_exist_ok=True)
 
     if not Path(backup_config).is_file() and Path(code_config).is_file():
         copyfile(code_config, backup_config)
 
     print(f'Writing VS Code configuration to {code_config}.')
 
-    try:
+    if Path(code_config).is_file():
         with open(code_config, 'r') as file:
             data = json.load(file)
         for key, value in optional.items():
@@ -113,7 +114,7 @@ for user_config_dir, extensions_dir in zip(USER_CONFIG_DIRS, EXTENSIONS_DIRS):
             data[key] = value
         with open(code_config, 'w') as file:
             json.dump(data, file, indent=2)
-    except:
+    else:
         with open(code_config, 'w') as file:
             json.dump(full, file, indent=2)
 
